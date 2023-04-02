@@ -1,3 +1,40 @@
 .container {
-  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
+
+
+.container__logo {
+  position: relative;
+  color: white;
+  width: 330px;
+  height: 105px;
+  cursor: pointer;
+}
+
+.container__logo:after {
+  display: flex;
+  content: "";
+  background: linear-gradient(transparent, white, transparent);
+  position: relative;
+  width: 70%;
+  height: 1px;
+  margin: 0 auto;
+  bottom: -10px;
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.container__logo:hover:after {
+  opacity: 1;
+}
+
+.container__text {
+  font-family: 'Rubik';
+  font-size: 26px;
+  color: white;
+  margin: 0 auto;
+}
+

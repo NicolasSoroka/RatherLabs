@@ -1,13 +1,15 @@
-import React from 'react'
+import React from "react";
+import styles from "./RatherLogo.module.css";
+import Link from "next/link";
 
-import styles from './RatherLogo.module.css';
-
-const RatherLogo = () => {
+const index = () => {
   return (
-      <svg
-          className={styles.container}
-          width="330"
-          height="105"
+    <div className={styles.container}>
+      <Link
+        href="https://www.ratherlabs.com/"
+        className={styles.container__logo}
+      >
+        <svg
           viewBox="0 0 110 35"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +92,10 @@ const RatherLogo = () => {
             fill="currentColor"
           ></path>
         </svg>
-  )
-}
+      </Link>
+      <h2 className={styles.container__text}>Quiz</h2>
+    </div>
+  );
+};
 
-export default RatherLogo
+export default index;
