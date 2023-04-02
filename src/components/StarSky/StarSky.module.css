@@ -1,0 +1,24 @@
+.container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  animation: bounce 2s ease-in-out alternate infinite;
+}
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1.0;
+    transform: scale(1.2);
+  }
+}
