@@ -1,4 +1,48 @@
 .container {
   postion: relative;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 1;
+}
+
+.container__title {
+  color: white;
+  font-family: 'Space Grotesk';
+  font-size: 30px;
+}
+
+.container__controls {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 15px;  
+}
+
+.container__controls button {
+  width: 60px;
+  height: 25px;
+  border: none;
+  outline: none;
+  font-family: 'Rubik';
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  transition: all 200ms ease-in-out;
+}
+
+.container__controls button:hover {
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+  transform: scale(1.1);
+}
+
+
+.container__controls span {
+  display: flex;
+  align-items: center;
+  font-family: 'Rubik';
+  color: white;
 }

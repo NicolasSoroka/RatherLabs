@@ -1,23 +1,23 @@
 .flip-exit {
-  transform: rotateY(0deg);
+  transform: rotateY(360deg);
 }
 
 .flip-exit-active {
-  transform: rotateY(180deg);
-  transition: transform 300ms;
+  transform: rotateY(0deg);
+  transition: transform 400ms;
 }
 
 .flip-exit-done {
-  transform: rotateY(180deg);
+  transform: rotateY(0deg);
 }
 
 .flip-enter {
-  transform: rotateY(180deg);
+  transform: rotateY(360deg);
 }
 
 .flip-enter-active {
   transform: rotateY(0deg);
-  transition: transform 300ms;
+  transition: transform 400ms;
 }
 
 .flip-enter-done {

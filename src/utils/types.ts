@@ -4,7 +4,7 @@ export type surveyDataType = {
   questions: questionType[];
 };
 
-type questionType = {
+export type questionType = {
   text: string;
   image: string;
   lifetimeSeconds: number;
