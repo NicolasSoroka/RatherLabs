@@ -1,13 +1,10 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { mockData } from './quizdata'; 
+import { surveyDataType } from '../../utils/types';
 
-type Data = {
-  name: string
-}
-
-export default function handler(
+export default function getQuiz(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<surveyDataType>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  res.status(200).json(mockData);
 }

@@ -16,6 +16,8 @@ function Balance() {
           await window.ethereum.enable();
           const accounts = await web3.eth.getAccounts();
           setAccount(accounts[0]);
+          console.log('0x7a397874F74B5f221895139d939AE0158D6e6f31')
+          console.log(account)
 
           // Get the $QUIZ token balance for the current account
           const quizTokenContract = new web3.eth.Contract(
@@ -51,6 +53,7 @@ function Balance() {
             .balanceOf(account)
             .call();
           setBalance(balance);
+          console.log(balance)
         } catch (error) {
           console.error(error);
         }

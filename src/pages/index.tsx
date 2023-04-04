@@ -1,8 +1,8 @@
 import Head from "next/head";
 import React from "react";
 import styles from "../styles/MainPage.module.css";
-import LoginContainer from "@/containers/LoginContainer";
 import { StarSky } from "@/components";
+import { LoginContainer, QuizContainer } from "@/containers";
 
 const MainPage = () => {
 
@@ -15,7 +15,9 @@ const MainPage = () => {
 
       <div className={styles.container}>
         <StarSky />
-        <LoginContainer/>
+        {/* <LoginContainer/> */}
+        <QuizContainer/>
+        {/* <FlippableCard/> */}
       </div>
     </>
   );

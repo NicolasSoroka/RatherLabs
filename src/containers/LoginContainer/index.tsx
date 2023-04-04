@@ -7,6 +7,25 @@ const LoginContainer = () => {
     console.log("test");
   };
 
+  React.useEffect(() => {
+    const data = 'test';
+
+    fetch('/api/hello', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  }, [])
+
   return (
     <div className={styles.container}>
       <RatherLogo />
