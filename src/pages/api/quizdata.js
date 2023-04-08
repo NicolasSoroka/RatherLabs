@@ -1,6 +1,6 @@
 export const mockData = {
   title: "Sample Survey",
-  image: "https://48tools.com/wp-content/uploads/2015/09/shortlink.png",
+  image: "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
   questions: [
     {
       text: "Question1",
@@ -37,7 +37,7 @@ export const mockData = {
       ],
     },
     {
-      text: "Pregunta 2",
+      text: "Pregunta 3",
       image:
         "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
       lifetimeSeconds: 5,

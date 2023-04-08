@@ -1,0 +1,53 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.container__title {
+  color: white;
+  font-family: 'Space Grotesk';
+  font-size: 30px;
+}
+
+.container__balance {
+  color: white;
+  font-family: 'Space Grotesk';
+  font-size: 18px;
+}
+
+.container__image {
+  position: relative;
+  min-width: 300px;
+  min-height: 300px;
+  border: 2px solid white;
+  border-radius: 2px;
+}
+
+.container__button {
+  position: relative;
+  width: 80px;
+}
+
+.container__button button {
+  position: absolute;  
+  width: 100%;
+  padding: 5px;
+  border: none;
+  outline: none;
+  font-family: 'Rubik';
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  transition: all 200ms ease-in-out;
+}
+
+.container__button button:hover {
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+  transform: scale(1.1);
+}

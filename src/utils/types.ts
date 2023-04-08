@@ -14,3 +14,7 @@ export type questionType = {
 type optionType = {
   text: string;
 };
+
+export type answersType = {
+  [key:string]: number;
+}

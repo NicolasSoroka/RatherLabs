@@ -29,7 +29,6 @@ const LoginButton: React.FC<LoginButtonProps> = ({ text, onClick }) => {
         justifyContent: "center",
         gap: '10px',
         width: "200px",
-        height: '40px',
         fontFamily: 'Rubik, sans-serif',
       }}
       icon={

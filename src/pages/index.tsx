@@ -1,25 +1,19 @@
-import Head from "next/head";
-import React from "react";
+import Web3 from "web3";
+import abi from "../utils/abi";
 import styles from "../styles/MainPage.module.css";
-import { StarSky } from "@/components";
-import { LoginContainer, QuizContainer } from "@/containers";
+import { Home } from "@/components";
+import { LoginContainer } from "@/containers";
+import { useGlobalContext } from "@/context/context";
 
 const MainPage = () => {
 
-  return (
-    <>
-      <Head>
-        <title>Rather Labs - Nicolas Soroka</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+  const { networkId, account } = useGlobalContext();
 
+  return (
       <div className={styles.container}>
-        <StarSky />
-        {/* <LoginContainer/> */}
-        <QuizContainer/>
-        {/* <FlippableCard/> */}
+        <LoginContainer/>
+        {account !== null && networkId === 5 && <Home />}
       </div>
-    </>
   );
 };
 
