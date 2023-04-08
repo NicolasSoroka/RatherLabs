@@ -12,7 +12,7 @@ const Home = () => {
   const [balance, setBalance] = useState("");
 
   useEffect(() => {
-    const tokenAddress = "0x437eF217203452317C3C955Cf282b1eE5F6aaF72";
+    const tokenAddress = process.env.TOKEN_ADDRESS;
     const web3 = new Web3(window.ethereum);
     const tokenContract = new web3.eth.Contract(abi, tokenAddress);
 

@@ -1,5 +1,3 @@
-import Web3 from "web3";
-import abi from "../utils/abi";
 import styles from "../styles/MainPage.module.css";
 import { Home } from "@/components";
 import { LoginContainer } from "@/containers";

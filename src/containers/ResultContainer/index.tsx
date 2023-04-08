@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+  import React, { useState } from "react";
 import styles from "./ResultContainer.module.css";
 import { useGlobalContext } from "@/context/context";
 import { fromWei } from "web3-utils";
@@ -9,26 +9,9 @@ import { Button } from "antd";
 const ResultContainer = () => {
   const { data, answers, account } = useGlobalContext();
   const [balance, setBalance] = useState("");
-
-  useEffect(() => {
-    const tokenAddress = "0x437eF217203452317C3C955Cf282b1eE5F6aaF72";
-    const web3 = new Web3(window.ethereum);
-    const tokenContract = new web3.eth.Contract(abi, tokenAddress);
-
-    tokenContract.methods
-      .balanceOf(account)
-      .call()
-      .then((balance) => {
-        setBalance(fromWei(balance, "ether"));
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-
   const Web3 = require("web3");
   const web3 = new Web3(window.ethereum);
-
+    
   web3.eth
     .subscribe("newBlockHeaders", (error, result) => {
       if (error) {
@@ -36,9 +19,9 @@ const ResultContainer = () => {
       }
     })
     .on("data", async (blockHeader) => {
-      const tokenAddress = "0x437eF217203452317C3C955Cf282b1eE5F6aaF72";
+      const QUIZTokenAddress = process.env.TOKEN_ADDRESS;
       const web3 = new Web3(window.ethereum);
-      const tokenContract = new web3.eth.Contract(abi, tokenAddress);
+      const tokenContract = new web3.eth.Contract(abi, QUIZTokenAddress);
   
       tokenContract.methods
         .balanceOf(account)
@@ -55,7 +38,7 @@ const ResultContainer = () => {
     });
 
   const getReward = () => {
-    const QUIZTokenAddress = "0x437eF217203452317C3C955Cf282b1eE5F6aaF72";
+    const QUIZTokenAddress = process.env.TOKEN_ADDRESS;
     const web3 = new Web3(window.ethereum);
     const QUIZTokenContract = new web3.eth.Contract(abi, QUIZTokenAddress);
 
@@ -65,7 +48,7 @@ const ResultContainer = () => {
     });
     const gasLimit = 200000;
     const options = {
-      from: "0x7a397874F74B5f221895139d939AE0158D6e6f31",
+      from: account,
       gas: gasLimit,
     };
 
