@@ -75,7 +75,7 @@ const ResultContainer = () => {
       <h2 className={styles.container__title}>Selected answers:</h2>
 
       <ul className={styles.container__ul}>
-        {Object.entries(answers!).map(([key, value]) => {
+        {Object.entries(answers!).map(([key, value] : [any, number]) => {
           const question = data?.questions[key].text;
           const answer = data?.questions[key].options[value].text;
           return <li key={uuidv4()}>{`${question}: ${answer}`}</li>;
