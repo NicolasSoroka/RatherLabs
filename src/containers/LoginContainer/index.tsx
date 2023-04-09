@@ -43,6 +43,7 @@ const LoginContainer = () => {
 
   useEffect(() => {
     connectWallet();
+    connectToGoerli();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
