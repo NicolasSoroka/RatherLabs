@@ -1,5 +1,5 @@
 import { LoginButton, RatherLogo } from "@/components";
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./LoginContainer.module.css";
 import { Button } from "antd";
 import { useGlobalContext } from "@/context/context";
@@ -40,6 +40,11 @@ const LoginContainer = () => {
       console.error(error);
     }
   };
+
+  useEffect(() => {
+    connectWallet();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div className={styles.container}>

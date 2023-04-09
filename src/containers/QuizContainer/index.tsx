@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./QuizContainer.module.css";
 import { useGlobalContext } from "@/context/context";
 import Image from "next/image";
@@ -14,8 +14,12 @@ const QuizContainer = () => {
     setCurrentQuestion,
     setQuizFinished,
   } = useGlobalContext();
-  const [selectedItem, setSelectedItem] = useState();
+  const [selectedItem, setSelectedItem] = useState('');
 
+  useEffect(() => {
+    setSelectedItem('');
+  }, [selectedItem])
+  
   const handleAnswerClick = (item: any, index: any) => {
     setSelectedItem(item.text === selectedItem ? null : item.text);
     setAnswers({ ...answers, [currentQuestion]: index });
