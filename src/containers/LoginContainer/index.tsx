@@ -1,5 +1,5 @@
 import { LoginButton, RatherLogo } from "@/components";
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./LoginContainer.module.css";
 import { Button } from "antd";
 import { useGlobalContext } from "@/context/context";
@@ -7,11 +7,6 @@ import Web3 from "web3";
 
 const LoginContainer = () => {
   const { account, networkId, setAccount, setNetworkId } = useGlobalContext();
-
-  useEffect(() => {
-    if (account === null) connectWallet();
-    if (networkId !== 5) connectToGoerli();
-  }, [account, networkId]);
 
   const connectWallet = async () => {
     const web3 = new Web3(window.ethereum);

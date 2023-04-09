@@ -13,4 +13,7 @@ module.exports = {
     ],
     nextConfig,
   },
+  env: {
+    TOKEN_ADDRESS_VAR: process.env.TOKEN_ADDRESS,
+  }
 };

@@ -3,8 +3,8 @@ import styles from "./Home.module.css";
 import Image from "next/image";
 import { useGlobalContext } from "@/context/context";
 import Web3 from "web3";
-import abi from "@/utils/abi";
-import { fromWei } from "web3-utils";
+import Abi from "@/utils/abi";
+import { fromWei, AbiItem } from "web3-utils";
 import Link from "next/link";
 
 const Home = () => {
@@ -12,20 +12,20 @@ const Home = () => {
   const [balance, setBalance] = useState("");
 
   useEffect(() => {
-    const tokenAddress = process.env.TOKEN_ADDRESS;
+    const tokenAddress = process.env.TOKEN_ADDRESS_VAR;
     const web3 = new Web3(window.ethereum);
-    const tokenContract = new web3.eth.Contract(abi, tokenAddress);
+    const tokenContract = new web3.eth.Contract(Abi as AbiItem[], tokenAddress);
 
     tokenContract.methods
       .balanceOf(account)
       .call()
-      .then((balance) => {
+      .then((balance: any) => {
         setBalance(fromWei(balance, "ether"));
       })
-      .catch((error) => {
+      .catch((error: any) => {
         console.error(error);
       });
-  }, []);
+  }, [account]);
 
   return (
     <div className={styles.container}>
