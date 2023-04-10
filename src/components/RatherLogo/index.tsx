@@ -1,10 +1,17 @@
 import React from "react";
 import styles from "./RatherLogo.module.css";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const index = () => {
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
       <Link
         href="https://www.ratherlabs.com/"
         className={styles.container__logo}
@@ -93,8 +100,7 @@ const index = () => {
           ></path>
         </svg>
       </Link>
-      <h2 className={styles.container__text}>Quiz</h2>
-    </div>
+    </motion.div>
   );
 };
 

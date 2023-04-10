@@ -1,7 +1,6 @@
 import { LoginButton, RatherLogo } from "@/components";
 import React, { useEffect } from "react";
 import styles from "./LoginContainer.module.css";
-import { Button } from "antd";
 import { useGlobalContext } from "@/context/context";
 import Web3 from "web3";
 
@@ -45,23 +44,26 @@ const LoginContainer = () => {
     connectWallet();
     connectToGoerli();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   return (
     <div className={styles.container}>
       <RatherLogo />
       {account === null && (
-        <LoginButton text={"Login with Metamask"} onClick={connectWallet} />
+        <LoginButton
+          onClick={connectWallet}
+          text={"Login with Metamask"}
+          logo={true}
+          delay={0.7}
+        />
       )}
       {networkId !== 5 && account !== null && (
-        <Button
+        <LoginButton
           onClick={connectToGoerli}
-          style={{
-            fontFamily: "Rubik, sans-serif",
-          }}
-        >
-          Connect to Goerli Network
-        </Button>
+          text={"Connect to Goerli Network"}
+          logo={false}
+          delay={0}
+        />
       )}
     </div>
   );

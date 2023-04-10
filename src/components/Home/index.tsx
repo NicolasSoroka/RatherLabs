@@ -6,6 +6,7 @@ import Web3 from "web3";
 import Abi from "@/utils/abi";
 import { fromWei, AbiItem } from "web3-utils";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const { data, account } = useGlobalContext();
@@ -28,16 +29,22 @@ const Home = () => {
   }, [account]);
 
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
       <h2 className={styles.container__title}>{data?.title}</h2>
       <p className={styles.container__balance}>Balance: {balance} QUIZ</p>
       <div className={styles.container__image}>
-        {data?.image && <Image src={data?.image} alt="image" fill/>}
+        {data?.image && <Image src={data?.image} alt="image" fill />}
       </div>
       <Link href="/quiz" className={styles.container__button}>
         <button>Start</button>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 
