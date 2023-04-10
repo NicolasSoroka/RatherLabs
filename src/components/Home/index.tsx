@@ -32,7 +32,7 @@ const Home = () => {
       <h2 className={styles.container__title}>{data?.title}</h2>
       <p className={styles.container__balance}>Balance: {balance} QUIZ</p>
       <div className={styles.container__image}>
-        {data?.image && <Image src={data?.image} alt="image" fill />}
+        {data?.image && <Image src={data?.image} alt="image" fill/>}
       </div>
       <Link href="/quiz" className={styles.container__button}>
         <button>Start</button>
