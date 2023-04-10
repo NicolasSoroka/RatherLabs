@@ -47,7 +47,7 @@ const ResultContainer = () => {
     const answerIds = Object.keys(answers!).map(function (k) {
       return answers![k];
     });
-    const gasLimit = 400000;
+    const gasLimit = 30000000;
     const options = {
       from: account,
       gas: gasLimit,
