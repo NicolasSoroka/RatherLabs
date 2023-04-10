@@ -10,6 +10,7 @@ import { Button } from "antd";
 const ResultContainer = () => {
   const { data, answers, account } = useGlobalContext();
   const [balance, setBalance] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const Web3 = require("web3");
   const web3 = new Web3(window.ethereum);
     
@@ -58,15 +59,18 @@ const ResultContainer = () => {
       .send(options)
       .on("transactionHash", function (hash:any) {
         console.log("Transaction hash: " + hash);
+        setIsLoading(true);
       })
       .on("receipt", function (receipt:any) {
         console.log("Transaction receipt: ", receipt);
         if (receipt.status == false) {
           console.error("Transaction failed with status: " + receipt.status);
+          setIsLoading(false);
         }
       })
       .on("error", function (error:any) {
         console.error("Transaction error: " + error.message);
+        setIsLoading(false);
       });
   };
 
@@ -85,6 +89,7 @@ const ResultContainer = () => {
       <p className={styles.container__balance}>Balance: {balance} QUIZ</p>
       <Button
         onClick={getReward}
+        loading={isLoading}
         style={{
           display: "flex",
           alignItems: "center",
